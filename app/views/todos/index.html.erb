@@ -11,6 +11,9 @@
             <th>Fecha de creacion</th>
             <th>Mostrar</th>
             <th>Editar</th>
+            <th>Eliminar</th>
+            <th>Completado</th>
+
             <th colspan="3"></th>
             </tr>
         </thead>
@@ -22,7 +25,9 @@
                 <td><%= todo.completed %></td>
                 <td><%= todo.created_at %></td>
                 <td><%= link_to "Show", todo_path(todo)%></td>
-                <td><%= link_to "Edit", edit_todo_path(todo)%></td>
+                <td><%= link_to "Edit", edit_path(todo)%></td>
+                <td><%= link_to "Eliminar", todo, method: :delete %></td>
+                <td><%= link_to "Completado", complete_path(todo) %></td>
             </tr>
             <% end %>
         </tbody>
@@ -30,4 +35,6 @@
   </div>
 </div>
 
-<%= link_to  'Crear todo', new_todo_path %>
+<%= link_to  'Crear todo', todos_new_path %>
+</br>
+<%= link_to  'Listar', todos_lista_path %>
